@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{padding: 0;margin: 0;}
+			body,html{height: 100%;width: 100%;}
+			.main {
+				display: block;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				background-color: red;
+			}
+			.snow-canvas {
+				display: block;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				position: fixed;
+				pointer-events: none;	/*使点击用户的点击效果失效，并向下穿透事件*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main"></div>
+		<canvas class="snow-canvas" speed="1" interaction="false" size="2" count="80" opacity="0.00001" start-color="rgba(253,252,251,1)" end-color="rgba(251,252,253,0.3)" wind-power="0" image="false" width="1272" height="150"></canvas>
+		<canvas class="snow-canvas" speed="3" interaction="true" size="6" count="30" start-color="rgba(253,252,251,1)" end-color="rgba(251,252,253,0.3)" opacity="0.00001" wind-power="2" image="false" width="1272" height="150"></canvas>
+		<canvas class="snow-canvas" speed="3" interaction="true" size="12" count="20" wind-power="-5" image="img/snow.png" width="1272" height="150"></canvas>
+	</body>
+    <script type="text/javascript" src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js" ></script>
+	<script type="text/javascript" src="js/main.js" ></script>
+	<script>
+		$(function() {
+			$(".snow-canvas").snow();
+		});
+	</script>
+
+</html>
